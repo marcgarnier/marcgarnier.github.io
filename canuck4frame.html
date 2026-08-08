@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canuck4Frame — how Canadian media frame 4chan (2017–2026) | Marc Garnier</title>
+  <meta name="description" content="A computational framing analysis of how ten major Canadian news outlets cover 4chan, 2017–2026. BERTopic over a Media Cloud corpus: seven frames, a measurable shift over time, and a significant French–English divergence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">marc garnier_</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="thesis.html">Doctoral thesis</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="kicker">Research project · first results</span>
+        <h1>Canuck4Frame &mdash; how do Canadian media frame 4chan?</h1>
+        <p class="lede" style="margin-top: 1.2rem;">
+          Ten major Canadian outlets, ten years of coverage, one platform. This project measures the
+          <strong>media frames</strong> that Canadian journalism uses when it writes about 4chan &mdash;
+          and asks whether those frames drifted from <em>&ldquo;meme factory&rdquo;</em> toward
+          <em>&ldquo;far-right engine&rdquo;</em>, and whether Francophone and Anglophone newsrooms
+          tell the same story. Topics are extracted inductively with BERTopic, then coded by hand into
+          frames.
+        </p>
+        <div class="hero-actions" style="margin-top: 1.5rem;">
+          <a class="btn btn-primary" href="https://github.com/marcgarnier/canuck4frame" target="_blank" rel="noopener" style="padding: 0.6rem 1.1rem; font-size: 0.7rem;">GitHub project</a>
+          <a class="btn btn-dark" href="https://github.com/marcgarnier/canuck4frame/blob/master/PROTOCOL.md" target="_blank" rel="noopener" style="padding: 0.6rem 1.1rem; font-size: 0.7rem;">Research protocol</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Stats ================= -->
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat">
+          <div class="value">270 articles</div>
+          <div class="label">Corpus modelled, 2017&ndash;2026</div>
+        </div>
+        <div class="stat">
+          <div class="value">10 outlets</div>
+          <div class="label">Public broadcasters + major titles</div>
+        </div>
+        <div class="stat">
+          <div class="value">21 &rarr; 7</div>
+          <div class="label">Topics collapsed into frames</div>
+        </div>
+        <div class="stat">
+          <div class="value">p = 0.0016</div>
+          <div class="label">French vs English framing differs</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Research questions ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Research questions</span>
+          <h2 class="section-title">Not what 4chan says &mdash; what Canada says about it.</h2>
+          <p class="lede">
+            The object of study is <strong>media discourse about 4chan</strong>, not content produced
+            by 4chan users. Each article is a trace of how a newsroom chose to make the platform
+            legible to a Canadian public.
+          </p>
+        </div>
+        <div class="card-grid two">
+          <div class="card reveal">
+            <span class="card-label">RQ1 · Framing</span>
+            <h3>Which frames structure Canadian coverage of 4chan?</h3>
+            <p>
+              Frames are not assumed in advance. BERTopic clusters the corpus inductively; the
+              resulting topics are then read and coded by hand into a small set of interpretable
+              frames.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">RQ2 · Temporal shift</span>
+            <h3>Did the dominant frame change between 2017 and 2026?</h3>
+            <p>
+              The expectation is a drift away from an internet-culture reading of 4chan toward an
+              extremism-and-violence reading, tracked as frame share per year.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">RQ3 · Language</span>
+            <h3>Do Francophone and Anglophone outlets frame it differently?</h3>
+            <p>
+              Tested with a chi-square test of independence between frame and article language,
+              reported alongside Cram&eacute;r&rsquo;s V as an effect size.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Method</span>
+            <h3>Reproducible, parameterised, auditable.</h3>
+            <p>
+              Every parameter lives in a single <span style="font-family: var(--mono);">config.yaml</span>;
+              modelling is seeded; the corpus export and the list of unrecoverable links are both
+              versioned.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Corpus ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Corpus</span>
+          <h2 class="section-title">Building a corpus that almost didn&rsquo;t exist.</h2>
+          <p class="lede">
+            &ldquo;4chan&rdquo; is a niche keyword in Canadian news, and the first data source simply
+            had nothing. Getting to 270 usable articles took a change of database and a detour
+            through the Internet Archive &mdash; a methodological result in itself.
+          </p>
+        </div>
+        <div class="card-grid two">
+          <div class="card reveal">
+            <span class="card-label">Dead end</span>
+            <h3>GDELT returned zero.</h3>
+            <p>
+              The GDELT DOC 2.0 index contains essentially no &ldquo;4chan&rdquo; articles for the
+              target outlets &mdash; <strong>0</strong> for cbc.ca, radio-canada.ca, ledevoir.com and
+              tvanouvelles.ca, and roughly four for the whole of Canada. The API also refuses start
+              dates before 2017.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Source</span>
+            <h3>Media Cloud, exported by hand.</h3>
+            <p>
+              The same query on Media Cloud returns <strong>344</strong> indexed articles across the
+              ten outlets. The search is run in the web interface and exported to CSV, which is
+              committed to the repository as the ground truth of the corpus.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Retrieval</span>
+            <h3>Two passes for the article text.</h3>
+            <p>
+              Media Cloud exports metadata only. Bodies are scraped live with trafilatura, browser
+              headers and per-domain rate limiting; whatever hard-fails (paywalls, 404/410, blocks,
+              tarpits) is retried against the <strong>Wayback Machine</strong>, which recovered 29
+              articles &mdash; including all of TVA Nouvelles, blocked outright on the live web.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Attrition</span>
+            <h3>344 &rarr; 280 &rarr; 270.</h3>
+            <p>
+              64 links exist neither online nor in the archive; 10 more are stubs or duplicates
+              removed in preprocessing. The unrecovered URLs are listed in a versioned CSV so the gap
+              is auditable rather than silent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Pipeline ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Pipeline</span>
+          <h2 class="section-title">From CSV export to frame.</h2>
+          <p class="lede">
+            Five steps, each runnable and inspectable on its own. Only one of them is human.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="num">Step · 01</span>
+            <h3>Collect</h3>
+            <p>
+              <span style="font-family: var(--mono);">collect.py</span> imports the Media Cloud CSV,
+              fetches each article body, and writes newline-delimited JSON incrementally, so an
+              interrupted run keeps everything already retrieved.
+            </p>
+          </div>
+          <div class="step reveal">
+            <span class="num">Step · 02</span>
+            <h3>Recover</h3>
+            <p>
+              <span style="font-family: var(--mono);">recover_wayback.py</span> looks up the closest
+              Internet Archive snapshot near each failed article&rsquo;s publication date and extracts
+              the body from the raw archived page.
+            </p>
+          </div>
+          <div class="step reveal">
+            <span class="num">Step · 03</span>
+            <h3>Preprocess</h3>
+            <p>
+              <span style="font-family: var(--mono);">preprocess.py</span> strips boilerplate, drops
+              stubs and duplicates, and detects the language of each article rather than assuming it
+              from the outlet &mdash; 213 English, 57 French.
+            </p>
+          </div>
+          <div class="step reveal">
+            <span class="num">Step · 04</span>
+            <h3>Model</h3>
+            <p>
+              <span style="font-family: var(--mono);">modeling.py</span> runs BERTopic over
+              multilingual sentence embeddings (UMAP + HDBSCAN), with English and French stopwords
+              removed at the c-TF-IDF stage and discriminative terms
+              (<span style="font-family: var(--mono);">4chan</span>,
+              <span style="font-family: var(--mono);">meme</span>,
+              <span style="font-family: var(--mono);">incel</span>&thinsp;&hellip;) protected.
+            </p>
+          </div>
+          <div class="step reveal">
+            <span class="num">Step · 05</span>
+            <h3>Code &amp; analyse</h3>
+            <p>
+              The 21 topics are read through their most representative articles and assigned a frame
+              label by hand. <span style="font-family: var(--mono);">visualization.py</span> and
+              <span style="font-family: var(--mono);">stats.py</span> then group by frame to produce
+              the temporal, comparative and inferential results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Frames ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Coding</span>
+          <h2 class="section-title">Seven frames, 231 coded articles.</h2>
+          <p class="lede">
+            BERTopic produced 21 topics and left 39 articles (14&thinsp;%) as outliers &mdash; a low
+            rate for a corpus this small. Related topics were then merged by hand: four separate
+            mass-violence and extremism topics, for instance, collapse into a single frame.
+          </p>
+        </div>
+        <div class="card-grid">
+          <div class="card reveal">
+            <span class="card-label">51 articles</span>
+            <h3>Far-right extremism</h3>
+            <p>Hate symbols on campus, the Pittsburgh and Buffalo shootings, Boogaloo networks, the Capitol insurrection.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">43 articles</span>
+            <h3>Violence &amp; crime</h3>
+            <p>Christchurch and the livestreamed mosque attack, Las Vegas, 8chan as a venue for announcing massacres.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">37 articles</span>
+            <h3>Meme &amp; internet culture</h3>
+            <p>Rumour circulation, online subcultures, and 4chan as a cultural engine &mdash; up to the <em>Backrooms</em> film.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">29 articles</span>
+            <h3>Incel &amp; misogyny</h3>
+            <p>The Toronto van attack, the incel movement, and violent misogyny debated as a form of terrorism.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">25 articles</span>
+            <h3>Conspiracy &amp; QAnon</h3>
+            <p>QAnon&rsquo;s move into mainstream politics and its convergence with COVID-19 health conspiracies.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">23 articles</span>
+            <h3>Platform &amp; tech</h3>
+            <p>Moderation, online-harms regulation, data leaks, and the people who built and fought 8chan.</p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">23 articles</span>
+            <h3>Politics &amp; elections</h3>
+            <p>Political memes, the Freedom Convoy&rsquo;s transatlantic networks, and the Trump assassination attempt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Results ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Results</span>
+          <h2 class="section-title">A frame that moves, and a border that shows.</h2>
+          <p class="lede">
+            Two findings stand out: Canadian coverage of 4chan does not sit still across the decade,
+            and it does not read the same in French and in English.
+          </p>
+        </div>
+
+        <div class="result-figs">
+
+          <figure class="result-fig reveal">
+            <span class="fig-label">Figure 1 · frames over time</span>
+            <div class="fig-plate">
+              <img src="assets/figures/fig-c4f-frames-over-time.png"
+                   alt="Stacked area chart of the share of each frame per year, 2017 to 2026: violence dominates 2017, QAnon peaks in 2020, far-right extremism peaks in 2022-2023, politics in 2024, internet culture in 2026.">
+            </div>
+            <figcaption>
+              Coverage is <strong>event-driven</strong>, and the dominant frame follows the news
+              cycle. Violence and crime open the period at 61&thinsp;% of 2017 articles (Las Vegas);
+              conspiracy peaks at 47&thinsp;% in 2020 as QAnon meets the pandemic; far-right extremism
+              takes 55&thinsp;% then 62&thinsp;% in 2022&ndash;2023; the 2024 US election pushes the
+              political frame to 50&thinsp;%. The drift from &ldquo;meme factory&rdquo; to
+              &ldquo;far-right engine&rdquo; is visible &mdash; but it is not the end of the story:
+              internet culture returns strongly in 2025&ndash;2026, when a horror film born on 4chan
+              reaches the box office.
+            </figcaption>
+          </figure>
+
+          <figure class="result-fig reveal">
+            <span class="fig-label">Figure 2 · French vs English</span>
+            <div class="fig-plate">
+              <img src="assets/figures/fig-c4f-fr-en.png"
+                   alt="Grouped bar chart comparing frame shares in English and French coverage: internet culture 36 percent in French versus 11 in English; far-right extremism 24 percent in English versus 13 in French; incel 15 versus 4 percent.">
+            </div>
+            <figcaption>
+              The two language communities cover the same platform differently, and the difference is
+              statistically significant (&chi;&sup2;&nbsp;=&nbsp;21.39, <em>p</em>&nbsp;=&nbsp;0.0016,
+              Cram&eacute;r&rsquo;s&nbsp;V&nbsp;=&nbsp;0.26 &mdash; a moderate effect).
+              <strong>Anglophone outlets frame 4chan as a threat</strong>: far-right extremism
+              (24&thinsp;% vs 13), incels (15&thinsp;% vs 4), violence (20&thinsp;% vs 13).
+              <strong>Francophone outlets frame it as a cultural phenomenon</strong>: internet culture
+              accounts for 36&thinsp;% of French articles against 11&thinsp;% of English ones.
+              Conspiracy is the one frame both share almost exactly (11&thinsp;%).
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Limits ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Limits &amp; next steps</span>
+          <h2 class="section-title">What these numbers cannot carry.</h2>
+        </div>
+        <div class="card-grid two">
+          <div class="card reveal">
+            <span class="card-label">Limit 01</span>
+            <h3>Small n, fragile cells</h3>
+            <p>
+              270 articles spread over seven frames, two languages and ten years leaves many cells
+              below five expected observations, which makes the chi-square approximation unreliable.
+              The p-value is reported with that caveat; a Fisher exact test is the natural next step.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Limit 02</span>
+            <h3>Uneven survival by outlet</h3>
+            <p>
+              Retrieval attrition is not random. CBC contributes only 6 articles because its older URLs
+              are poorly archived, while the Toronto Star contributes 78 &mdash; so per-outlet
+              comparisons are descriptive, not representative.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Limit 03</span>
+            <h3>Interpretive coding</h3>
+            <p>
+              Frame labels are assigned by a single coder. Inter-annotator agreement on a subsample,
+              with Cohen&rsquo;s &kappa;, would put the coding scheme on firmer ground.
+            </p>
+          </div>
+          <div class="card reveal">
+            <span class="card-label">Next</span>
+            <h3>Thicker French corpus</h3>
+            <p>
+              With only 57 French articles, the most striking finding &mdash; the Francophone
+              cultural framing &mdash; rests on the thinnest part of the corpus. Recovering the blocked
+              Québec outlets is the priority before the result is written up.
+            </p>
+          </div>
+        </div>
+
+        <div class="taxonomy" style="margin-top: 3rem;">
+          <div>
+            <div class="group-label">Corpus</div>
+            <div class="chips">
+              <span class="chip">Media Cloud</span>
+              <span class="chip">Wayback Machine</span>
+              <span class="chip">trafilatura</span>
+            </div>
+          </div>
+          <div>
+            <div class="group-label">Modelling</div>
+            <div class="chips">
+              <span class="chip">BERTopic</span>
+              <span class="chip">sentence-transformers</span>
+              <span class="chip">UMAP + HDBSCAN</span>
+            </div>
+          </div>
+          <div>
+            <div class="group-label">Statistics</div>
+            <div class="chips">
+              <span class="chip">chi-square</span>
+              <span class="chip">Cramér's V</span>
+              <span class="chip">scipy</span>
+            </div>
+          </div>
+          <div>
+            <div class="group-label">Reproducibility</div>
+            <div class="chips">
+              <span class="chip">config.yaml</span>
+              <span class="chip">seeded UMAP</span>
+              <span class="chip">CI · pytest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <p>© <span data-year>2026</span> Marc Garnier · Université Laval</p>
+      <ul class="footer-links">
+        <li><a href="thesis.html">Doctoral thesis</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="mailto:garniermarc.pro@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
