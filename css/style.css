@@ -963,3 +963,117 @@ img.portrait {
   .result-fig { padding: 1rem 1rem 0.9rem; }
   .result-fig img { min-width: 26rem; }
 }
+
+/* --------------------------------------------------------------------------
+   Doctoral timeline (thesis page)
+   -------------------------------------------------------------------------- */
+
+.phd-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 0.5rem;
+}
+
+.tl-year {
+  position: relative;
+  border-top: 1px solid var(--border);
+  padding: 2.1rem 1.6rem 0 0;
+}
+
+.tl-year::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.tl-year.is-current::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-dim);
+}
+
+.tl-num {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.tl-span {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.tl-year h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.tl-phase {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tl-phase.is-muted {
+  color: var(--text-faint);
+  background: transparent;
+  border-color: var(--border);
+}
+
+.tl-year ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.tl-year li {
+  position: relative;
+  padding-left: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.tl-year li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 4px;
+  height: 1px;
+  background: var(--text-faint);
+}
+
+@media (max-width: 900px) {
+  .phd-timeline { grid-template-columns: 1fr 1fr; }
+  .tl-year { padding-bottom: 2rem; }
+}
+
+@media (max-width: 620px) {
+  .phd-timeline { grid-template-columns: 1fr; }
+  .tl-year { padding-right: 0; }
+}
