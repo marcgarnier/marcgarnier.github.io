@@ -236,6 +236,62 @@
       </div>
     </section>
 
+    <!-- ================= Validation ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Reliability</span>
+          <h2 class="section-title">Calibrating the codebook before annotating.</h2>
+          <p class="lede">
+            A classifier can never be more reliable than the gold standard it was trained on. Before
+            the full sample is annotated, the coding scheme is therefore calibrated through a loop of
+            independent double coding and codebook revision. Agreement is measured with two
+            coefficients rather than one: Cohen’s κ collapses toward zero on rare categories even
+            when raw agreement is high, and Gwet’s AC1 corrects for that by adjusting for prevalence
+            — a necessity with 22 multi-label tags, several of which will be infrequent.
+          </p>
+        </div>
+        <div class="strata reveal">
+          <div class="stratum">
+            <span class="idx">01</span>
+            <h3>Pilot subsample</h3>
+            <p class="detail">A subsample is drawn from the planned gold standard, deliberately stratified to over-represent rare labels — an agreement score computed on four occurrences means nothing.</p>
+            <span class="src">100–200 passages</span>
+          </div>
+          <div class="stratum">
+            <span class="idx">02</span>
+            <h3>Independent double coding</h3>
+            <p class="detail">Two coders annotate the subsample separately, using the full scheme: 8 thematic frames, 6 actor categories, 4 evaluative stances. The pilot is coded blind, without LLM pre-annotation, so that the two passes remain genuinely independent.</p>
+            <span class="src">2 coders</span>
+          </div>
+          <div class="stratum">
+            <span class="idx">03</span>
+            <h3>Agreement measurement</h3>
+            <p class="detail">Cohen’s κ and Gwet’s AC1 are computed for each dimension, and for each label taken as present or absent.</p>
+            <span class="src">κ · AC1</span>
+          </div>
+          <div class="stratum">
+            <span class="idx">04</span>
+            <h3>Diagnosis</h3>
+            <p class="detail">A low score almost always points to an ambiguous category rather than to the coders. Systematic disagreement on “ethics and rights” signals that its boundary with “regulation” has not been drawn.</p>
+            <span class="src">per category</span>
+          </div>
+          <div class="stratum">
+            <span class="idx">05</span>
+            <h3>Codebook revision</h3>
+            <p class="detail">The faulty definition is reformulated with positive examples, negative examples and borderline cases; the revision is dated and versioned. The test is then run again on a fresh batch, so that agreement measures clarity rather than the coders’ memory.</p>
+            <span class="src">dated · versioned</span>
+          </div>
+          <div class="stratum">
+            <span class="idx">06</span>
+            <h3>Scaling up</h3>
+            <p class="detail">Once agreement is satisfactory, the remainder of the gold standard is annotated with confidence — and it is this validated sample, and only this one, that trains BERT and CamemBERT.</p>
+            <span class="src">→ Phase 03</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= Corpus ================= -->
     <section class="section">
       <div class="wrap">
