@@ -3,584 +3,776 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctoral Thesis — Framing AI in Canadian Political Documents | Marc Garnier</title>
-  <meta name="description" content="Computational framing analysis of artificial intelligence in Canadian political documents, 2017–2026. Doctoral research by Marc Garnier, Université Laval.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <title>Ph. D. Thesis | Marc Garnier</title>
+  <meta name="description" content="The political construction of artificial intelligence in Canadian federal political discourse, 2017–2026: a computational analysis of the federal policy process. Doctoral thesis project by Marc Garnier, Université Laval.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
-    <div class="wrap nav">
-      <a class="brand" href="index.html">
-        marc garnier_
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="thesis.html" class="active">Doctoral thesis</a></li>
-        <li><a href="projects.html">Projects</a></li>
+    <nav class="nav">
+      <a class="brand" href="index.html">Marc Garnier</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Research</a></li>
+        <li><a href="thesis.html" class="active">Ph. D. Thesis</a></li>
         <li><a href="cv.html">CV</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <main>
+  <main class="prose">
 
-    <!-- ================= Hero ================= -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="kicker">Doctoral Thesis · 2026 → · Supervised by Thierry Giasson</span>
-          <h1>Framing AI in Canadian political documents, <em>2017–2026</em>.</h1>
-          <p class="lede" style="margin-top: 1.2rem;">
-            “How is AI <strong>framed</strong> in Canadian political discourse, <strong>by which
-            actors</strong>, and how do these framings <strong>transform</strong> between 2017 and
-            2026?” — a supervised machine-learning approach, transposing the CCF methodology to the
-            federal parliamentary and strategic corpus.
-          </p>
-        </div>
-        <div class="hero-portrait">
-          <svg class="retro-computer" viewBox="2 0 106 78" role="img"
-               shape-rendering="crispEdges"
-               aria-label="Pixel-art illustration of an annotated research notepad with coloured index tabs, a pencil and a small Canadian desk flag">
+    <div class="page-head">
+      <p class="eyebrow">Ph. D. Thesis project · August 2026</p>
+      <h1>The political construction of artificial intelligence in Canadian federal political discourse</h1>
+      <p class="subtitle">A computational analysis of the federal policy process</p>
+      <p class="byline">
+        Marc Garnier · Department of Political Science, Université Laval ·
+        Supervised by Thierry Giasson
+      </p>
 
-            <!-- ================= notepad ================= -->
-            <!-- back cover, offset for depth -->
-            <rect x="8" y="10" width="48" height="56" fill="#6a6a66"/>
-            <!-- paper -->
-            <rect x="6" y="8"  width="48" height="56" fill="#e9e5da"/>
-            <rect x="6" y="8"  width="48" height="1"  fill="#f4f1e8"/>
-            <rect x="6" y="62" width="48" height="2"  fill="#cfcabf"/>
-            <!-- spiral rings -->
-            <rect x="10" y="4" width="2" height="6" fill="#6a6a66"/>
-            <rect x="16" y="4" width="2" height="6" fill="#6a6a66"/>
-            <rect x="22" y="4" width="2" height="6" fill="#6a6a66"/>
-            <rect x="28" y="4" width="2" height="6" fill="#6a6a66"/>
-            <rect x="34" y="4" width="2" height="6" fill="#6a6a66"/>
-            <rect x="40" y="4" width="2" height="6" fill="#6a6a66"/>
-            <rect x="46" y="4" width="2" height="6" fill="#6a6a66"/>
+      <ol class="toc">
+        <li><a href="#question">Object and research question</a></li>
+        <li><a href="#context">Empirical context and time frame</a></li>
+        <li><a href="#literature">State of the art</a></li>
+        <li><a href="#theory">Theoretical framework</a></li>
+        <li><a href="#hypotheses">Hypotheses</a></li>
+        <li><a href="#corpus">Corpus</a></li>
+        <li><a href="#annotation">Annotation scheme</a></li>
+        <li><a href="#method">Methodological design</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li class="unnumbered"><a href="#references">References</a></li>
+      </ol>
+    </div>
 
-            <!-- "AI" header, underlined in red like a hand annotation -->
-            <text x="10" y="21" font-family="'IBM Plex Mono', monospace" font-size="9"
-                  font-weight="500" fill="#2f2f2a" shape-rendering="auto">AI</text>
-            <rect x="10" y="23" width="12" height="1" fill="#c33d31"/>
-            <text x="26" y="20" font-family="'IBM Plex Mono', monospace" font-size="5"
-                  fill="#8c887c" shape-rendering="auto">2017–2026</text>
-
-            <!-- corpus lines with annotation highlights appearing over them -->
-            <rect x="10" y="28" width="8"  height="2" fill="#b5b0a4"/>
-            <rect class="rc-line" style="--d:0s" x="20" y="28" width="12" height="2" fill="#86d3a5"/>
-            <rect x="34" y="28" width="10" height="2" fill="#b5b0a4"/>
-
-            <rect class="rc-line" style="--d:.7s" x="10" y="33" width="10" height="2" fill="#d8b46f"/>
-            <rect x="22" y="33" width="20" height="2" fill="#b5b0a4"/>
-
-            <rect x="10" y="38" width="14" height="2" fill="#b5b0a4"/>
-            <rect class="rc-line" style="--d:1.4s" x="26" y="38" width="12" height="2" fill="#e59a9a"/>
-
-            <rect x="10" y="43" width="6"  height="2" fill="#b5b0a4"/>
-            <rect class="rc-line" style="--d:2.1s" x="18" y="43" width="10" height="2" fill="#b3a1e6"/>
-            <rect x="30" y="43" width="12" height="2" fill="#b5b0a4"/>
-
-            <rect x="10" y="48" width="32" height="2" fill="#b5b0a4"/>
-            <rect x="10" y="53" width="20" height="2" fill="#b5b0a4"/>
-
-            <!-- ================= index tabs ================= -->
-            <rect x="52" y="14" width="8" height="8" fill="#86d3a5"/>
-            <rect x="52" y="20" width="8" height="2" fill="#6aa983"/>
-            <rect x="52" y="26" width="8" height="8" fill="#d8b46f"/>
-            <rect x="52" y="32" width="8" height="2" fill="#b39355"/>
-            <rect x="52" y="38" width="8" height="8" fill="#e59a9a"/>
-            <rect x="52" y="44" width="8" height="2" fill="#c17a7a"/>
-            <rect x="52" y="50" width="8" height="8" fill="#b3a1e6"/>
-            <rect x="52" y="56" width="8" height="2" fill="#9182c2"/>
-
-            <!-- ================= pencil ================= -->
-            <rect x="8"  y="68" width="4"  height="5" fill="#d98a8a"/>
-            <rect x="12" y="68" width="3"  height="5" fill="#b9b4a9"/>
-            <rect x="15" y="68" width="24" height="5" fill="#d9b23f"/>
-            <rect x="15" y="68" width="24" height="1" fill="#e6c65e"/>
-            <rect x="15" y="72" width="24" height="1" fill="#b5922e"/>
-            <rect x="39" y="68" width="4"  height="5" fill="#e0c9a0"/>
-            <rect x="43" y="69" width="3"  height="3" fill="#4a4a47"/>
-
-            <!-- ================= Canadian desk flag ================= -->
-            <rect x="77" y="10" width="4" height="3"  fill="#c4c4c0"/>
-            <rect x="78" y="13" width="2" height="53" fill="#8c8c88"/>
-            <!-- flag: red band / white / red band -->
-            <rect x="80" y="14" width="6"  height="16" fill="#c33d31"/>
-            <rect x="86" y="14" width="12" height="16" fill="#efece2"/>
-            <rect x="98" y="14" width="6"  height="16" fill="#c33d31"/>
-            <rect x="80" y="28" width="6"  height="2"  fill="#a33529"/>
-            <rect x="86" y="28" width="12" height="2"  fill="#d8d4c8"/>
-            <rect x="98" y="28" width="6"  height="2"  fill="#a33529"/>
-            <!-- pixel maple leaf -->
-            <rect x="91" y="15" width="2"  height="2" fill="#c33d31"/>
-            <rect x="90" y="17" width="4"  height="2" fill="#c33d31"/>
-            <rect x="88" y="19" width="8"  height="2" fill="#c33d31"/>
-            <rect x="87" y="21" width="10" height="2" fill="#c33d31"/>
-            <rect x="90" y="23" width="4"  height="1" fill="#c33d31"/>
-            <rect x="91" y="24" width="2"  height="3" fill="#c33d31"/>
-            <!-- stand -->
-            <rect x="74" y="66" width="10" height="2" fill="#6a6a66"/>
-            <rect x="72" y="68" width="14" height="3" fill="#8c8c88"/>
-          </svg>
-        </div>
-      </div>
+    <!-- ================= 1. Object and research question ================= -->
+    <section id="question">
+      <h2 class="section-title"><span class="num">1</span>Object and research question</h2>
+      <p>
+        Since 2017, artificial intelligence has taken on a growing place in Canadian federal
+        public action. This doctoral project studies how the discourse of Canadian
+        parliamentarians frames the political stakes of artificial intelligence. Its object is
+        therefore the framing process — not AI policy itself, nor the technology that makes it
+        possible. One research question follows and sets the scope of the project:
+      </p>
+      <blockquote class="question">
+        How is artificial intelligence framed in Canadian political discourse, by which actors,
+        and how do these framings change between 2017 and 2026?
+      </blockquote>
+      <p>
+        Three axes follow from this question. The first concerns the thematic dimensions
+        mobilised to talk about AI. The second focuses on the political actors who take up and
+        use these different dimensions. The third addresses the shift in the hierarchy of frames
+        over the period (2017–2026).
+      </p>
+      <p>
+        In the literature, the frames of an issue can delimit the range of solutions that appear
+        possible and legitimate for addressing a problem in an executive or legislative setting
+        (af Malmborg, 2023). Presenting AI as an economic opportunity for a country may call for
+        investment and for a lighter touch on any regulation. Conversely, presenting it as a risk
+        to fundamental rights calls for legal oversight. In a parliamentary arena, these
+        discursive trade-offs shape the AI issue and its influence in the public sphere. Their
+        translation into law, however, depends on institutional practices already in place
+        (Hajer, 1993).
+      </p>
     </section>
 
-    <!-- ================= Stats ================= -->
-    <section class="stats">
-      <div class="wrap stats-grid">
-        <div class="stat">
-          <div class="value">8 frames</div>
-          <div class="label">Thematic categories</div>
-        </div>
-        <div class="stat">
-          <div class="value">6 actors</div>
-          <div class="label">Messenger types</div>
-        </div>
-        <div class="stat">
-          <div class="value">4 stances</div>
-          <div class="label">Evaluative framings</div>
-        </div>
-        <div class="stat">
-          <div class="value">κ · AC1</div>
-          <div class="label">Intercoder validation</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Turning point / timeline ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Point of departure</span>
-          <h2 class="section-title">2017: a turning point.</h2>
-          <p class="lede">
-            The Pan-Canadian AI Strategy marks the first time the federal government treats AI as
-            an object of public policy. It is the anchor from which the corpus is built — the
-            equivalent of the CCF project’s “1978” — and the reference point against which the
-            evolution of framings is measured.
-          </p>
-        </div>
-        <ul class="timeline">
-          <li class="reveal">
-            <span class="year">2017</span>
+    <!-- ================= 2. Context ================= -->
+    <section id="context">
+      <h2 class="section-title"><span class="num">2</span>Empirical context and time frame</h2>
+      <p>
+        The period I plan to cover begins in 2017 with the Pan-Canadian Artificial Intelligence
+        Strategy, led by CIFAR and Innovation, Science and Economic Development Canada. Earlier
+        discussions of AI or robotics exist, but the Pan-Canadian Strategy is the Canadian
+        state’s first real recognition of one of the major stakes in recent debates on AI:
+        sovereignty. For the first time, the federal government treats AI as a fully fledged
+        object of public policy, with its own funding, steering and discourse. 2017 is therefore
+        the starting point of the corpus and the benchmark against which later developments will
+        be measured.
+      </p>
+      <p>Six milestones structure the period:</p>
+      <ul class="entries compact">
+        <li class="entry">
+          <span class="when">2017</span>
+          <div>
             <h3>Pan-Canadian Artificial Intelligence Strategy</h3>
-            <p>CIFAR / ISED. The founding document: AI becomes a federal policy object.</p>
-          </li>
-          <li class="reveal">
-            <span class="year">2019</span>
+            <p class="meta">CIFAR / Innovation, Science and Economic Development Canada</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2019</span>
+          <div>
             <h3>Directive on Automated Decision-Making</h3>
-            <p>Treasury Board rules for algorithmic decisions within the federal administration.</p>
-          </li>
-          <li class="reveal">
-            <span class="year">2022</span>
-            <h3>AI Strategic Plan · AIDA (Bill C-27)</h3>
-            <p>First attempt at a Canadian legislative framework for artificial intelligence.</p>
-          </li>
-          <li class="reveal">
-            <span class="year">2024</span>
-            <h3>National AI Strategy consultation</h3>
-            <p>Public consultation and briefs feeding into the future national strategy.</p>
-          </li>
-          <li class="reveal">
-            <span class="year">2026</span>
+            <p class="meta">Treasury Board Secretariat</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2022</span>
+          <div>
+            <h3>Bill C-27 tabled: Artificial Intelligence and Data Act (AIDA)</h3>
+            <p class="meta">Parliament of Canada</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2024</span>
+          <div>
+            <h3>Public consultation on the national AI strategy</h3>
+            <p class="meta">Government of Canada</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2025</span>
+          <div>
+            <h3>AI Strategy for the Federal Public Service</h3>
+            <p class="meta">Treasury Board Secretariat</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2026</span>
+          <div>
             <h3>National strategy “AI for All”</h3>
-            <p>The closing milestone of the period under study.</p>
-          </li>
-        </ul>
-      </div>
+            <p class="meta">Government of Canada</p>
+          </div>
+        </li>
+      </ul>
+      <p>
+        Beyond official initiatives, I expect to observe exogenous shocks: the mass diffusion of
+        generative AI from late 2022 onwards, and the international summits devoted to AI
+        governance.
+      </p>
     </section>
 
-    <!-- ================= Methodology ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Methodological framework</span>
-          <h2 class="section-title">A four-phase computational pipeline.</h2>
-          <p class="lede">
-            The pipeline is taken directly from the CCF methodology and transposed to the scale of
-            the Canadian corpus. Validation relies on intercoder agreement — Cohen’s κ and
-            Gwet’s AC1.
-          </p>
-        </div>
-        <div class="steps">
-          <div class="step reveal">
-            <span class="num">Phase · 01</span>
-            <h3>Corpus construction</h3>
-            <p>Collection of the sources and sentence-level segmentation with <span class="mono-num">spaCy</span>; structured storage in <span class="mono-num">PostgreSQL</span>.</p>
-          </div>
-          <div class="step reveal">
-            <span class="num">Phase · 02</span>
-            <h3>Semi-manual annotation</h3>
-            <p>A gold standard of 500–1,000 passages, annotated with LLM-assisted tooling and Doccano.</p>
-          </div>
-          <div class="step reveal">
-            <span class="num">Phase · 03</span>
-            <h3>Supervised classification</h3>
-            <p><span class="mono-num">BERT</span> (EN) and <span class="mono-num">CamemBERT</span> (FR) trained on the gold-standard sample.</p>
-          </div>
-          <div class="step reveal">
-            <span class="num">Phase · 04</span>
-            <h3>Diachronic analysis</h3>
-            <p>Quantified measurement of the shift in dominant framings across 2017–2026.</p>
-          </div>
-        </div>
-      </div>
+    <!-- ================= 3. State of the art ================= -->
+    <section id="literature">
+      <h2 class="section-title"><span class="num">3</span>State of the art</h2>
+      <p>
+        Several studies show that framing is already studied within the policy process. In the
+        context of policy practice, Schön and Rein (1994) define a frame as a diagnostic and
+        prescriptive story, and distinguish rhetorical frames (reconstructed from the texts of a
+        debate) from action frames (reconstructed from practices). Daviter (2011) offers a
+        longitudinal study of biotechnology frames in the European policy process: the
+        definition adopted for a policy issue determines which administrations take charge of it
+        and which solutions are admissible. From another angle, Klüver, Mahoney and Opper (2015)
+        examine interest groups and their framing choices to influence the European policy
+        arena; they too argue that framing choices are shaped by the groups themselves and by
+        the context in which they operate.
+      </p>
+      <p>
+        On AI and its regulation, Öge and Quintin (2026) follow how multiple actors — public
+        institutions, interest groups and civil-society organisations — frame facial recognition
+        in the United States and the European Union. Their study shows that frames shift over
+        time, conditioning which regulations appear legitimate. Chueri and Törnberg (2026), for
+        their part, analyse how political parties in 33 countries address the impact of AI on
+        work, across 1.5 million parliamentary speeches from 2023 to 2026. Their method, very
+        close to what I envisage for this thesis, combines speech extraction with automated
+        content coding by a large language model.
+      </p>
+
+      <h3 class="sub">3.1 Measuring framing computationally</h3>
+      <p>
+        Two bodies of work establish that framing can be measured rather than only interpreted.
+        On the American death-penalty debate, Baumgartner, De Boef and Boydstun (2008) show that
+        it is entirely possible to quantify the emergence of a new frame and the gradual
+        displacement or replacement of earlier ones — the most direct precedent for the
+        diachronic reasoning proposed here. Card et al. (2015) provide an annotation instrument
+        that cuts across policy issues, whose structure inspires the scheme presented below.
+      </p>
+      <p>
+        Another close methodological precedent is the Canadian Climate Framing project (Lemor et
+        al., 2026). It gathers 266,271 articles from twenty Canadian dailies between 1978 and
+        2024, segmented into 9.2 million sentence units and annotated along 65 hierarchical
+        categories. BERT and CamemBERT classifiers are trained on a sample and validated through
+        intercoder agreement (Cohen’s κ, Krippendorff’s α, Gwet’s AC1). The CCF project
+        establishes the feasibility of supervised framing analysis on a large bilingual Canadian
+        corpus. All of these studies, however, deal with media discourse, not with the discourse
+        of politicians in a legislative setting.
+      </p>
+
+      <h3 class="sub">3.2 Transformers applied to institutional political discourse</h3>
+      <p>
+        Three recent studies show that the institutional arena is accessible to these methods,
+        without addressing the problem at hand here. Also in a European setting, Kos, Tuković,
+        Vlainić and Bagić Babac (2026) apply BERT, RoBERTa and DistilBERT experimentally to
+        parliamentary debates from 28 countries to classify ideological orientation (here, left
+        versus right), using principal component analysis and attention scores to interpret
+        cross-national regularities. This work shows that the approach works on parliamentary
+        debates, not only on media corpora. Their task nonetheless remains simpler than mine:
+        the classification is binary, and the labels come from distant supervision rather than
+        human annotation.
+      </p>
+      <p>
+        In a doctoral thesis, Gupta (2023) applies BERT to 92 million tokens from about 170,000
+        British legislative and ministerial documents produced between 2000 and 2020. What
+        interests me in this work is its architecture: it shows how an interpretive theoretical
+        framework — the Foucauldian theory of language — can be linked to a natural language
+        processing tool. The theoretical family I adopt differs, however. Gupta also shows that
+        these techniques can be carried out on multimodal institutional corpora.
+      </p>
+      <p>
+        Lin (2025) goes further in the third essay of a doctoral thesis, detailing a procedure
+        for identifying frames directly with GPT-4o through chain-of-thought prompting (Wei et
+        al., 2022), validated through crowdsourcing. The chain runs in three steps:
+        <strong>quote</strong> (the model extracts passages and quotations from the original
+        document), <strong>summarise</strong> (it condenses the extracts to bring out the main
+        ideas) and <strong>synthesise</strong> (it turns this information into an abstract
+        concept in the form of frame labels). This <em>computational frame analysis</em>
+        outperformed a classic topic-modelling approach in several rounds of human validation.
+      </p>
+      <p>
+        Should one then train a supervised classifier on a human-annotated sample, or prompt a
+        large language model directly? For now, I take the first route, for reasons of
+        traceability and reproducibility (Do, Ollion &amp; Shen, 2022). Lin’s framing analysis
+        concerns a press corpus; the institutional corpus used in another part of that work, the
+        Congressional Record, serves to measure message discipline. Using transformers, Lin
+        notably finds that parties in power speak less homogeneously than those that do not have
+        to govern.
+      </p>
+      <p>
+        Finally, Proulx et al. (2026) investigate how political frames of AI are constructed
+        inside the European Parliament. Using a corpus of 666 plenary-session texts from 2014 to
+        2026 and a hybrid method combining topic discovery by a large language model with manual
+        annotation, the authors show how AI discourse fits into fairly traditional ideological
+        dynamics: right-wing MEPs favour <em>techno-optimistic</em> frames, left-wing MEPs
+        <em>techno-pessimistic</em> ones. In line with one of the aims of this thesis, their work
+        demonstrates the existence of exogenous shocks within the European institution, notably
+        the post-ChatGPT period from 2022.
+      </p>
+      <p>
+        Work of this kind is still in its infancy, and the research community is only beginning
+        to organise programmes that combine public policy and artificial intelligence, whether as
+        an object or as a method. Among the studies above, none appears to follow a frame across
+        the successive levels of a single institutional system, from external consultation to
+        the text of the law. Nor does any appear to treat language as a variable. These are the
+        two gaps this project addresses.
+      </p>
     </section>
 
-    <!-- ================= Validation ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Reliability</span>
-          <h2 class="section-title">Calibrating the codebook before annotating.</h2>
-          <p class="lede">
-            A classifier can never be more reliable than the gold standard it was trained on. Before
-            the full sample is annotated, the coding scheme is therefore calibrated through a loop of
-            independent double coding and codebook revision. Agreement is measured with two
-            coefficients rather than one: Cohen’s κ collapses toward zero on rare categories even
-            when raw agreement is high, and Gwet’s AC1 corrects for that by adjusting for prevalence
-            — a necessity with 22 multi-label tags, several of which will be infrequent.
-          </p>
-        </div>
-        <div class="strata reveal">
-          <div class="stratum">
-            <span class="idx">01</span>
-            <h3>Pilot subsample</h3>
-            <p class="detail">A subsample is drawn from the planned gold standard, deliberately stratified to over-represent rare labels — an agreement score computed on four occurrences means nothing.</p>
-            <span class="src">100–200 passages</span>
+    <!-- ================= 4. Theory ================= -->
+    <section id="theory">
+      <h2 class="section-title"><span class="num">4</span>Theoretical framework</h2>
+      <p>
+        Each dimension of the annotation scheme presented in section 7 is tied directly to an
+        identified theoretical function. I adopt Entman’s (1993) definition: to frame is to
+        select some aspects of a perceived reality and make them more salient in a text, so as to
+        promote a particular problem definition. Entman breaks the operation into four
+        functions: defining a problem, diagnosing its causes, making a moral judgement and
+        recommending a remedy.
+      </p>
+      <p>
+        To anchor this model in policy science, this structure is articulated with work on the
+        argumentative turn in public policy, which shows that policy formulation is a discursive
+        competition rather than a technical calculation (Fischer, 2003); with causal stories,
+        which explain how the attribution of causes turns a technological fate into a problem
+        for public action (Stone, 1989); with diagnostic and prescriptive frames (Schön &amp;
+        Rein, 1994); and with policy framing analysis in the governmental arena, which shows that
+        the definition adopted for an issue determines which administrations take charge of the
+        file, the regulatory or budgetary trade-offs, and the policy instruments deemed
+        legitimate (Daviter, 2011).
+      </p>
+      <p>
+        A frame does not travel alone. Gamson and Modigliani (1989) show that it is carried by
+        <em>sponsors</em> who invest resources to impose it in the public arena — an activity
+        that Benford and Snow (2000) formalise as framing work. This literature grounds the
+        <em>actors</em> dimension of the scheme and makes it possible to treat briefs submitted
+        to committees as attempts to impose a frame. I distinguish issue-specific frames from
+        generic frames, which transfer from one domain to another (De Vreese, 2005): the eight
+        thematic frames are specific to AI, while the four evaluative framings are generic and
+        comparable with other issues. I also distinguish frame-building from frame-setting, the
+        effect of frames on individual representations (Scheufele, 1999). This thesis belongs to
+        the first register only: it is concerned with the institutional production of frames,
+        not their reception. Finally, the literature on message discipline, present in Lin
+        (2025), makes it possible to theorise the specialisation of carriers: the institutional
+        position and role of actors (ministers, backbench MPs, experts) constrain the
+        consistency and variation of their framing work.
+      </p>
+      <p>
+        In this arena, framing has a direct legal consequence. The chain running from a brief
+        submitted to a committee to a ministerial statement, then to the text of the law, can be
+        observed within a single corpus — which grounds hypothesis H3, something a press corpus
+        cannot reproduce. Klüver (2013) measured the passage from consultation briefs to European
+        Commission proposals, and Leifeld and Haunss (2012) followed coalition frames through the
+        European conflict over software patents. Neither, however, covers the full chain up to
+        the adopted text. My hypothesis is that frames first emerge among external actors in
+        briefs (strata 03 and 05 of the corpus), are debated in committee and in Parliament
+        (stratum 01), taken up by ministers (stratum 04) and written into the text of the law
+        (stratum 02). Tracking frames across the strata makes it possible to measure the
+        diachronic shift in the hierarchy of frames (Baumgartner &amp; Jones, 1993; Baumgartner
+        et al., 2008). It also tests Lin’s (2025) hypothesis that initial ideological and
+        normative debates gradually give way to more technical discussions centred on practical
+        implementation.
+      </p>
+      <p>
+        This literature was built at the interface between the media and public policy, not
+        within institutions (Anderson &amp; Lawlor, 2016; Dodge &amp; Metze, 2024). Transposing
+        its analytical tools to parliamentary or governmental discourse therefore means changing
+        the arena of action, not just the corpus. Such a move is not neutral: the validity of an
+        instrument tested on journalistic text does not transfer automatically to institutional
+        text, which is governed by distinct norms and rhetorical codes. Three theoretical
+        consequences follow.
+      </p>
+      <ul class="entries compact">
+        <li class="entry">
+          <span class="when">First</span>
+          <div>
+            <h3>The carrier of a frame becomes data</h3>
+            <p class="desc">
+              In Hansard, the speaker is documented by name, party, riding, portfolio, committee
+              and date of intervention. The <em>actors</em> dimension thus separates two objects
+              that the media literature conflates — the speaker, available as exhaustive
+              metadata, and the actors the speaker invokes — and measures the gap between who
+              speaks and who is mobilised.
+            </p>
           </div>
-          <div class="stratum">
-            <span class="idx">02</span>
-            <h3>Independent double coding</h3>
-            <p class="detail">Two coders annotate the subsample separately, using the full scheme: 8 thematic frames, 6 actor categories, 4 evaluative stances. The pilot is coded blind, without LLM pre-annotation, so that the two passes remain genuinely independent.</p>
-            <span class="src">2 coders</span>
+        </li>
+        <li class="entry">
+          <span class="when">Second</span>
+          <div>
+            <h3>The chain from consultation to law is observable</h3>
+            <p class="desc">
+              The path from external consultation to law can be followed continuously within a
+              single archive, which is not the case in a media corpus.
+            </p>
           </div>
-          <div class="stratum">
-            <span class="idx">03</span>
-            <h3>Agreement measurement</h3>
-            <p class="detail">Cohen’s κ and Gwet’s AC1 are computed for each dimension, and for each label taken as present or absent.</p>
-            <span class="src">κ · AC1</span>
+        </li>
+        <li class="entry">
+          <span class="when">Third</span>
+          <div>
+            <h3>Bilingualism becomes analytical</h3>
+            <p class="desc">
+              Because Hansard is officially bilingual and translated, bilingualism ceases to be a
+              sampling obstacle and becomes a theoretical question: is a frame invariant under
+              official translation?
+            </p>
           </div>
-          <div class="stratum">
-            <span class="idx">04</span>
-            <h3>Diagnosis</h3>
-            <p class="detail">A low score almost always points to an ambiguous category rather than to the coders. Systematic disagreement on “ethics and rights” signals that its boundary with “regulation” has not been drawn.</p>
-            <span class="src">per category</span>
-          </div>
-          <div class="stratum">
-            <span class="idx">05</span>
-            <h3>Codebook revision</h3>
-            <p class="detail">The faulty definition is reformulated with positive examples, negative examples and borderline cases; the revision is dated and versioned. The test is then run again on a fresh batch, so that agreement measures clarity rather than the coders’ memory.</p>
-            <span class="src">dated · versioned</span>
-          </div>
-          <div class="stratum">
-            <span class="idx">06</span>
-            <h3>Scaling up</h3>
-            <p class="detail">Once agreement is satisfactory, the remainder of the gold standard is annotated with confidence — and it is this validated sample, and only this one, that trains BERT and CamemBERT.</p>
-            <span class="src">→ Phase 03</span>
-          </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
 
-    <!-- ================= Corpus ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Data sources</span>
-          <h2 class="section-title">A corpus in five strata.</h2>
-          <p class="lede">
-            The corpus is hypothetical at this stage — volumes remain to be confirmed, and passages
-            genuinely related to AI will be filtered beforehand.
-          </p>
-        </div>
-        <div class="strata reveal">
-          <div class="stratum">
-            <span class="idx">01</span>
-            <h3>Parliamentary debates</h3>
-            <p class="detail">Main corpus. Hansard — House, committees (INDU, ETHI, SECU, RNNR), Senate · 50,000–200,000 passages.</p>
-            <span class="src">ourcommons.ca · parl.ca · XML</span>
+    <!-- ================= 5. Hypotheses ================= -->
+    <section id="hypotheses">
+      <h2 class="section-title"><span class="num">5</span>Hypotheses</h2>
+      <ul class="entries">
+        <li class="entry">
+          <span class="when">H1</span>
+          <div>
+            <h3>Shift in the dominant frame</h3>
+            <p class="desc">
+              The economic frame, inherited from the industrial-policy logic of the 2017
+              Strategy, recedes in favour of regulatory and ethical framings from 2022 onwards,
+              with the emergence of large language models. A relative share of the economic
+              frame that remained stable over the period would refute the hypothesis.
+            </p>
           </div>
-          <div class="stratum">
-            <span class="idx">02</span>
-            <h3>Strategic documents</h3>
-            <p class="detail">2017 Strategy, 2022 Plan, Directive on Automated Decision-Making, AIDA (Bill C-27), “AI for All” 2026.</p>
-            <span class="src">canada.ca · ised-isde.canada.ca</span>
+        </li>
+        <li class="entry">
+          <span class="when">H2</span>
+          <div>
+            <h3>Specialisation of carriers</h3>
+            <p class="desc">
+              Evaluative framing covaries with the speaker’s institutional position, known from
+              Hansard metadata: party affiliation and role as minister, committee member or
+              backbench MP.
+            </p>
           </div>
-          <div class="stratum">
-            <span class="idx">03</span>
-            <h3>Consultations &amp; briefs</h3>
-            <p class="detail">AIDA, 2024 National Strategy consultation, briefs submitted to committees.</p>
-            <span class="src">consultations · canada.ca</span>
-          </div>
-          <div class="stratum">
-            <span class="idx">04</span>
-            <h3>Speeches &amp; addresses</h3>
-            <p class="detail">Speeches from the Throne, federal budgets, ministerial addresses (ISED, TBS, PS).</p>
-            <span class="src">canada.ca · House archives</span>
-          </div>
-          <div class="stratum">
-            <span class="idx">05</span>
-            <h3>Advisory reports</h3>
-            <p class="detail">AI Advisory Council, Office of the Privacy Commissioner, Senate committee reports.</p>
-            <span class="src">lop.parl.ca</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Annotation scheme ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Intellectual contribution</span>
-          <h2 class="section-title">The annotation scheme.</h2>
-          <p class="lede">
-            The first AI × politics annotation scheme adapted to the bilingual Canadian context.
-            Each sentence can carry multiple labels: thematic frames, messengers and evaluative
-            stances.
-          </p>
-        </div>
-
-        <div class="annotation-demo reveal">
-          <span class="source">Hansard · Minister (Government) — annotated example</span>
-          <p class="sentence">
-            Artificial intelligence represents
-            <span class="ann ann-econ">a major economic opportunity<span class="ann-tag">Economic · Opportunity</span></span>
-            for Canada, but we must
-            <span class="ann ann-ethics">protect privacy<span class="ann-tag">Ethics</span></span>
-            and prevent
-            <span class="ann ann-risk">algorithmic discrimination<span class="ann-tag">Risk</span></span>
-            as well as
-            <span class="ann ann-security">disinformation<span class="ann-tag">Security</span></span>.
-          </p>
-
-          <div class="taxonomy">
-            <div>
-              <div class="group-label">Thematic frames · 8</div>
-              <div class="chips">
-                <span class="chip">Economic</span>
-                <span class="chip">Security</span>
-                <span class="chip">Ethics &amp; rights</span>
-                <span class="chip">Scientific-technical</span>
-                <span class="chip">Regulation</span>
-                <span class="chip">Sovereignty</span>
-                <span class="chip">Labour</span>
-                <span class="chip">Health</span>
-              </div>
-            </div>
-            <div>
-              <div class="group-label">Actors / messengers · 6</div>
-              <div class="chips">
-                <span class="chip">Researchers</span>
-                <span class="chip">Civil servants</span>
-                <span class="chip">Companies</span>
-                <span class="chip">Civil society</span>
-                <span class="chip">International organisations</span>
-                <span class="chip">Political parties</span>
-              </div>
-            </div>
-            <div>
-              <div class="group-label">Evaluative framings · 4</div>
-              <div class="chips">
-                <span class="chip">Opportunity</span>
-                <span class="chip">Risk</span>
-                <span class="chip">Urgency</span>
-                <span class="chip">Neutrality</span>
-              </div>
-            </div>
-            <div>
-              <div class="group-label">Trigger events</div>
-              <div class="chips">
-                <span class="chip">National strategies</span>
-                <span class="chip">Bills</span>
-                <span class="chip">Incidents (ChatGPT)</span>
-                <span class="chip">Summits (G7, Bletchley)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Analytical scope ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Analytical scope</span>
-          <h2 class="section-title">The analyses this corpus makes possible.</h2>
-          <p class="lede">
-            Beyond the <em>when</em>: the corpus captures <em>who</em> frames AI, <em>how</em>,
-            <em>why</em> and with what effects.
-          </p>
-        </div>
-        <div class="card-grid">
-          <div class="card reveal">
-            <span class="card-label">01</span>
-            <h3>Actors &amp; framings</h3>
-            <p>Who speaks and how: Liberals vs Conservatives, ISED vs Treasury Board, Mila vs Microsoft.</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">02</span>
-            <h3>Authority networks</h3>
-            <p>NER and co-citations: Bengio framed as “ethics”, OpenAI as “threat” or “opportunity”.</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">03</span>
-            <h3>Federal geography</h3>
-            <p>Framings by province and institution; jurisdictional tensions over AI.</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">04</span>
-            <h3>Agenda-setting</h3>
-            <p>Trigger events and attention peaks: the ChatGPT effect in the House.</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">05</span>
-            <h3>Priority at the top</h3>
-            <p>Which frames reach the Speech from the Throne and the federal budget.</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">06</span>
-            <h3>Inter-party comparison</h3>
-            <p>NDP / labour, Bloc / sovereignty, Conservatives / competitiveness.</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">07</span>
-            <h3>Discursive polarisation</h3>
-            <p>Is AI becoming divisive like climate, or does it remain consensual?</p>
-          </div>
-          <div class="card reveal">
-            <span class="card-label">08 · Novel avenue</span>
+        </li>
+        <li class="entry">
+          <span class="when">H3</span>
+          <div>
             <h3>Discursive cascades</h3>
-            <p>Tracing a framing from brief to committee, to minister, then to bill.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Contributions ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Conclusion</span>
-          <h2 class="section-title">Contributions and next steps.</h2>
-        </div>
-        <div class="card-grid two">
-          <div class="card reveal">
-            <span class="card-label">Contributions</span>
-            <h3>What the thesis brings</h3>
-            <p>
-              The first AI × politics annotation scheme adapted to the bilingual Canadian context ·
-              a quantified measurement of the shift in framings, 2017 → 2026 · an open, reusable
-              computational corpus.
+            <p class="desc">
+              A framing first appears among external actors, in briefs and advisory reports,
+              before being taken up in committee, then by ministers, then written into the
+              legislative text, with a measurable time lag.
             </p>
           </div>
-          <div class="card reveal">
-            <span class="card-label">Next steps</span>
-            <h3>Roadmap</h3>
-            <p>
-              <span class="mono-num">01</span> Build the Hansard corpus (XML) ·
-              <span class="mono-num">02</span> Annotate the gold standard (Doccano) ·
-              <span class="mono-num">03</span> Train and validate the classifiers ·
-              <span class="mono-num">04</span> Analyse the diachronic trajectory.
+        </li>
+        <li class="entry">
+          <span class="when">H4</span>
+          <div>
+            <h3>Language as an invariant</h3>
+            <p class="desc">
+              Because Hansard is officially bilingual and translated, the structure and
+              distribution of policy frames do not vary under translation. A large gap between
+              the distributions measured on the French and English versions of the same
+              intervention would refute the hypothesis.
             </p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </section>
 
-    <!-- ================= Doctoral timeline ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="kicker">Schedule</span>
-          <h2 class="section-title">Four years, four phases.</h2>
-          <p class="lede">
-            The pipeline maps onto the doctoral programme rather than running alongside it. The first
-            year builds the project and produces nothing measurable: no corpus is collected before the
-            theoretical framework is settled, the codebook drafted and the proposal signed. Collection
-            begins in year two — because a corpus assembled before the coding scheme exists is a
-            corpus assembled against the wrong criteria.
-          </p>
-        </div>
-        <div class="phd-timeline reveal">
-          <div class="tl-year is-current">
-            <span class="tl-num">Year 01</span>
-            <span class="tl-span">2026 — 2027</span>
-            <h3>Building the project</h3>
-            <span class="tl-phase is-muted">No data collection</span>
-            <ul>
-              <li>Coursework and literature review</li>
-              <li>Theoretical framework: framing definition, hypotheses, positioning</li>
-              <li>First draft of the codebook — definitions, examples, borderline cases</li>
-              <li>Thesis proposal written and signed</li>
-              <li>Ethics clearance and Hansard data licensing</li>
-              <li>Comprehensive examination</li>
-            </ul>
+    <!-- ================= 6. Corpus ================= -->
+    <section id="corpus">
+      <h2 class="section-title"><span class="num">6</span>Corpus</h2>
+      <p>
+        The corpus is organised into five strata. The first provides the volume needed to train
+        the classifiers; the other four provide most of the analytical reach.
+      </p>
+      <ul class="entries">
+        <li class="entry">
+          <span class="when">Stratum 01</span>
+          <div>
+            <h3>Parliamentary debates</h3>
+            <p class="desc">
+              Hansard: House of Commons, committees (INDU, ETHI, SECU, RNNR), Senate. The main
+              stratum, with an estimated 50,000 to 200,000 passages.
+            </p>
+            <p class="source">Sources: ourcommons.ca, parl.ca (XML)</p>
           </div>
-          <div class="tl-year">
-            <span class="tl-num">Year 02</span>
-            <span class="tl-span">2027 — 2028</span>
+        </li>
+        <li class="entry">
+          <span class="when">Stratum 02</span>
+          <div>
+            <h3>Strategic documents</h3>
+            <p class="desc">
+              The 2017 Strategy, the Directive on Automated Decision-Making, AIDA (C-27), the 2026
+              strategy. The founding texts.
+            </p>
+            <p class="source">Sources: canada.ca, ised-isde.canada.ca</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">Stratum 03</span>
+          <div>
+            <h3>Consultations and briefs</h3>
+            <p class="desc">
+              Consultations on AIDA and on the national strategy, briefs submitted to committees.
+              Reveals who seeks to weigh in from outside.
+            </p>
+            <p class="source">Sources: consultations, canada.ca</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">Stratum 04</span>
+          <div>
+            <h3>Speeches and addresses</h3>
+            <p class="desc">
+              Speeches from the Throne, federal budgets, ministerial addresses (ISED, Treasury
+              Board Secretariat, Public Safety). Measures priority at the top of the state.
+            </p>
+            <p class="source">Sources: canada.ca, archives</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">Stratum 05</span>
+          <div>
+            <h3>Advisory reports</h3>
+            <p class="desc">
+              Advisory Council on Artificial Intelligence, Office of the Privacy Commissioner,
+              Senate committees.
+            </p>
+            <p class="source">Source: lop.parl.ca</p>
+          </div>
+        </li>
+      </ul>
+      <p>
+        The volumes indicated are estimates still to be confirmed. The passages actually related
+        to AI will first need to be filtered; the criteria for this filter, and the bias of the
+        lexical query chosen, will be the subject of a documented decision.
+      </p>
+    </section>
+
+    <!-- ================= 7. Annotation scheme ================= -->
+    <section id="annotation">
+      <h2 class="section-title"><span class="num">7</span>Annotation scheme</h2>
+      <p>
+        Annotation is multi-label and operates at the sentence level. Its five dimensions are
+        tied to theory as follows.
+      </p>
+      <ul class="entries">
+        <li class="entry">
+          <span class="when">8 categories</span>
+          <div>
+            <h3>Thematic frames</h3>
+            <p class="desc">
+              Economic · Security · Ethics and rights · Scientific-technical · Regulation ·
+              Sovereignty · Labour · Health
+            </p>
+            <p class="source">
+              Entman’s (1993) first function: problem definition. Issue-specific frames (De
+              Vreese, 2005). Structure adapted from the Media Frames Corpus (Card et al., 2015)
+              and the CCF scheme (Lemor et al., 2026).
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">4 categories</span>
+          <div>
+            <h3>Evaluative framings</h3>
+            <p class="desc">Opportunity · Risk · Urgency · Neutrality</p>
+            <p class="source">
+              Entman’s (1993) third function: moral judgement. Generic frames (De Vreese, 2005).
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">6 categories</span>
+          <div>
+            <h3>Actors and messengers</h3>
+            <p class="desc">
+              Researchers · Civil servants · Businesses · Civil society · International
+              organisations · Political parties
+            </p>
+            <p class="source">
+              Framing sponsors (Gamson &amp; Modigliani, 1989); framing work (Benford &amp; Snow,
+              2000).
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">4 categories</span>
+          <div>
+            <h3>Causal attribution</h3>
+            <p class="desc">Fate · Technical cause · Negligence · Intentional cause</p>
+            <p class="source">
+              Entman’s (1993) second function: causal attribution. Causal stories (Stone, 1989,
+              p. 285) and focusing events.
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">4 categories</span>
+          <div>
+            <h3>Policy action</h3>
+            <p class="desc">Regulate · Invest · Coordinate internationally · Abstain</p>
+            <p class="source">
+              Entman’s (1993) fourth function: recommending a remedy. Prescriptive frames (Schön
+              &amp; Rein, 1994) and the legitimation of instruments in the governmental arena
+              (Daviter, 2011).
+            </p>
+          </div>
+        </li>
+      </ul>
+      <p>
+        The eight thematic frames are specific to the AI issue, and their structure draws on the
+        general meta-frames of Card et al. (2015). The six actor categories capture the framing
+        sponsors and the epistemic authorities invoked in discourse (Gamson &amp; Modigliani,
+        1989; Benford &amp; Snow, 2000). The four evaluative framings operationalise moral
+        valence and the intensity of a statement as generic frames (De Vreese, 2005). Causal
+        attribution is adapted from Stone (1989, p. 285).
+      </p>
+      <h3 class="sub">A theme is not a frame</h3>
+      <p>
+        One objection should be anticipated. Identifying that a sentence talks about the economy
+        is thematic analysis, not framing analysis. The multi-label structure answers this
+        objection: the frame lies not in the thematic dimension alone, but in the pairing of a
+        thematic dimension with an evaluative framing, attributed to a carrier. “Economic +
+        opportunity” and “economic + risk” share a theme and form two opposing frames.
+        Co-occurrence makes the frame.
+      </p>
+      <p>
+        The question of causal attribution also arises in this context. I expect the four
+        positions Stone distinguishes to be salient in Canadian discourse on AI. Asserting that a
+        technological revolution is under way, blaming discrimination on training data, or
+        accusing a foreign actor of manipulating an election: these statements often share the
+        same theme and the same evaluative framing, yet they designate different culprits and
+        call for incompatible remedies. It is in this passage from an authorless attribution to
+        one that names someone responsible that a technological development becomes a problem
+        for public action (Stone, 1989).
+      </p>
+    </section>
+
+    <!-- ================= 8. Method ================= -->
+    <section id="method">
+      <h2 class="section-title"><span class="num">8</span>Methodological design</h2>
+      <p>
+        The design has four phases. The first three build an infrastructure; the fourth produces
+        the political science results.
+      </p>
+      <ul class="entries">
+        <li class="entry">
+          <span class="when">Phase 01</span>
+          <div>
+            <h3>Corpus construction</h3>
+            <p class="desc">
+              Collecting the sources, filtering passages related to AI, sentence segmentation
+              with spaCy, and structured storage in PostgreSQL with speaker and context metadata.
+              This phase fixes the unit of analysis, a decision that cannot be revisited later.
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">Phase 02</span>
+          <div>
+            <h3>Building the gold standard</h3>
+            <p class="desc">
+              This phase produces the examples without which no supervised learning is possible.
+              It is the only point in the chain where human judgement enters, and everything that
+              follows extrapolates from it. It unfolds in four steps. I first write the codebook:
+              a definition of each category, positive examples, negative examples and borderline
+              cases. Two people then independently code a subsample of 100 to 200 passages,
+              stratified to over-represent rare labels. This coding is blind and done without
+              automatic pre-labelling; otherwise both passes would anchor on the same suggestion
+              and agreement would be inflated.
+            </p>
+            <p class="desc">
+              Agreement is measured with Cohen’s κ and Gwet’s AC1, for each dimension and for
+              each label taken as present or absent. Using two coefficients addresses a specific
+              problem: Cohen’s κ collapses toward zero when a category is rare, even when raw
+              agreement remains high. Gwet’s AC1 (2008) corrects this artefact by adjusting for
+              prevalence. With multi-label tags, several of which will be infrequent, the
+              structure of the data requires this pairing.
+            </p>
+            <p class="desc">
+              A low score almost always signals a poorly defined category rather than failing
+              coders. Repeated disagreement on “ethics and rights” indicates that its boundary
+              with “regulation” has not been drawn. I then rewrite the faulty definition, date
+              and version the revision, and run the test again on a fresh batch, since the same
+              passages would measure the coders’ memory as much as the clarity of the
+              definitions. The acceptability threshold, and the rule for a label that keeps
+              failing, are set before the first test (Landis &amp; Koch, 1977).
+            </p>
+            <p class="desc">
+              Once agreement is judged satisfactory, I annotate the rest of the gold standard and
+              split it into a training portion and a held-out portion. Annotation and supervised
+              classification both take place at the sentence level, to capture precisely the
+              multi-label co-occurrences between thematic dimensions and to guarantee the
+              traceability of discursive cascades across the strata of the corpus.
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">Phase 03</span>
+          <div>
+            <h3>Supervised classification</h3>
+            <p class="desc">
+              BERT for English and CamemBERT for French, or XLM-RoBERTa for both combined, are
+              fine-tuned on the training portion, then evaluated on the held-out portion the
+              model has never seen. This evaluation sets the level of confidence given to each
+              label: a category whose F1 remains low cannot support any conclusion. F1 will be
+              reported per label and as a macro average, since a micro average hides the failure
+              of rare classes behind the success of frequent ones.
+            </p>
+            <p class="desc">
+              The models are then applied to the whole corpus. This phase adds no knowledge; it
+              only extends, at scale, a human judgement learned from about a thousand examples.
+              I will compare several architectures, as the results of Kos et al. (2026) suggest
+              that some offer a better trade-off between cost and accuracy. Since those results
+              concern an English-language corpus, their transfer to French will have to be
+              checked rather than assumed.
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">Phase 04</span>
+          <div>
+            <h3>Diachronic analysis</h3>
+            <p class="desc">
+              This phase produces the statistical and diachronic synthesis of how AI is framed
+              across the whole corpus. Sentence-level annotations are aggregated and crossed
+              along four main axes: time (month and year), party affiliation, type of carrier and
+              institutional stratum. Metrics are normalised as density per 1,000 words and
+              aggregated by intervention, a unit delimited in the Hansard XML and attached to a
+              single speaker, which preserves the link between a frame and its carrier. For
+              strata without this markup, the unit of aggregation is the document section.
+            </p>
+            <p class="desc">
+              The analysis measures realignments and shifts in the hierarchy of frames against
+              the milestones of Canadian public action (the 2017 Strategy, the 2019 Directive,
+              Bill C-27) as well as exogenous shocks. Finally, classifier performance
+              (XLM-RoBERTa, BERT and CamemBERT) is systematically measured by time slice to
+              detect any temporal drift of the model.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= 9. Timeline ================= -->
+    <section id="timeline">
+      <h2 class="section-title"><span class="num">9</span>Timeline</h2>
+      <ul class="entries">
+        <li class="entry">
+          <span class="when">2026–2027</span>
+          <div>
+            <h3>Designing the project</h3>
+            <p class="desc">
+              Coursework and literature review; theoretical framework and hypotheses; first
+              version of the codebook; writing and submitting the research proposal; ethics
+              certification and data licences; comprehensive exam. No data collection.
+            </p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2027–2028</span>
+          <div>
             <h3>Corpus and gold standard</h3>
-            <span class="tl-phase">Phases 01 · 02</span>
-            <ul>
-              <li>Hansard XML harvesting; AI-relevance filtering</li>
-              <li>Sentence segmentation and structured storage</li>
-              <li>Pilot double coding — κ and AC1, codebook revision, retest</li>
-              <li>Gold standard annotated once agreement is satisfactory</li>
-              <li>Train / held-out split of the annotated sample</li>
-            </ul>
+            <p class="desc">
+              Phases 01 and 02: harvesting Hansard, filtering, segmentation and storage; codebook
+              calibration and agreement measurement; gold-standard annotation and partitioning.
+            </p>
           </div>
-          <div class="tl-year">
-            <span class="tl-num">Year 03</span>
-            <span class="tl-span">2028 — 2029</span>
+        </li>
+        <li class="entry">
+          <span class="when">2028–2029</span>
+          <div>
             <h3>Classification at scale</h3>
-            <span class="tl-phase">Phase 03</span>
-            <ul>
-              <li>BERT and CamemBERT trained on the gold standard</li>
-              <li>Performance measured on the held-out portion; per-label reliability</li>
-              <li>Models applied to the full corpus</li>
-              <li>First descriptive results; conference papers</li>
-            </ul>
+            <p class="desc">
+              Phase 03: training and evaluating the classifiers; application to the full corpus;
+              first descriptive results and conference papers.
+            </p>
           </div>
-          <div class="tl-year">
-            <span class="tl-num">Year 04</span>
-            <span class="tl-span">2029 — 2030</span>
+        </li>
+        <li class="entry">
+          <span class="when">2029–2030</span>
+          <div>
             <h3>Analysis and writing</h3>
-            <span class="tl-phase">Phase 04</span>
-            <ul>
-              <li>Diachronic analysis of the shift in dominant framings</li>
-              <li>Discursive cascades: from committee brief to statute</li>
-              <li>Chapter writing and article submissions</li>
-              <li>Deposit and defence</li>
-            </ul>
+            <p class="desc">
+              Phase 04: diachronic analysis and discursive cascades; writing the chapters and
+              submitting articles; thesis submission and defence.
+            </p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= References ================= -->
+    <section id="references">
+      <h2 class="section-title">References</h2>
+      <ul class="refs">
+        <li>af Malmborg, F. (2023). Narrative dynamics in European Commission AI policy — Sensemaking, agency construction, and anchoring. <em>Review of Policy Research</em>, 40(5), 757–780.</li>
+        <li>Anderson, D., &amp; Lawlor, A. (2016). Media in the policy process: Using framing and narratives to understand policy influences. <em>Review of Policy Research</em>, 33(5), 472–491. <a href="https://doi.org/10.1111/ropr.12187" target="_blank" rel="noopener">doi.org/10.1111/ropr.12187</a></li>
+        <li>Baumgartner, F. R., De Boef, S. L., &amp; Boydstun, A. E. (2008). <em>The decline of the death penalty and the discovery of innocence</em>. Cambridge University Press.</li>
+        <li>Baumgartner, F. R., &amp; Jones, B. D. (1993). <em>Agendas and instability in American politics</em>. University of Chicago Press.</li>
+        <li>Benford, R. D., &amp; Snow, D. A. (2000). Framing processes and social movements: An overview and assessment. <em>Annual Review of Sociology</em>, 26, 611–639.</li>
+        <li>Card, D., Boydstun, A. E., Gross, J. H., Resnik, P., &amp; Smith, N. A. (2015). <em>The Media Frames Corpus: Annotations of frames across issues</em>. Association for Computational Linguistics.</li>
+        <li>Chong, D., &amp; Druckman, J. N. (2007). Framing theory. <em>Annual Review of Political Science</em>, 10, 103–126.</li>
+        <li>Chueri, J., &amp; Törnberg, P. (2026). Meeting the coming wave: The emerging politics of AI and work across 33 parliaments. arXiv:2609.02296.</li>
+        <li>Daviter, F. (2011). <em>Policy framing in the European Union</em>. Palgrave Macmillan.</li>
+        <li>De Vreese, C. H. (2005). News framing: Theory and typology. <em>Information Design Journal + Document Design</em>, 13(1), 51–62.</li>
+        <li>Do, Q.-A., Ollion, É., &amp; Shen, R. (2022). The augmented social scientist: Using sequential transfer learning to annotate millions of texts with human-level accuracy. <em>Sociological Methods &amp; Research</em>.</li>
+        <li>Dodge, J., &amp; Metze, T. (2024). Approaches to policy framing: Deepening a conversation across perspectives. <em>Policy Sciences</em>, 57(2), 221–256. <a href="https://doi.org/10.1007/s11077-024-09534-9" target="_blank" rel="noopener">doi.org/10.1007/s11077-024-09534-9</a></li>
+        <li>Entman, R. M. (1993). Framing: Toward clarification of a fractured paradigm. <em>Journal of Communication</em>, 43(4), 51–58.</li>
+        <li>Fischer, F. (2003). <em>Reframing public policy: Discursive politics and deliberative practices</em>. Oxford University Press. <a href="https://doi.org/10.1093/019924264X.001.0001" target="_blank" rel="noopener">doi.org/10.1093/019924264X.001.0001</a></li>
+        <li>Gamson, W. A., &amp; Modigliani, A. (1989). Media discourse and public opinion on nuclear power: A constructionist approach. <em>American Journal of Sociology</em>, 95(1), 1–37.</li>
+        <li>Gupta, A. (2023). <em>BERT for discourse analysis: A pragmatist approach to governmentality</em> [Doctoral thesis, University of Bristol].</li>
+        <li>Gwet, K. L. (2008). Computing inter-rater reliability and its variance in the presence of high agreement. <em>British Journal of Mathematical and Statistical Psychology</em>, 61(1), 29–48.</li>
+        <li>Hajer, M. A. (1993). Discourse coalitions and the institutionalization of practice: The case of acid rain in Britain. In F. Fischer &amp; J. Forester (Eds.), <em>The argumentative turn in policy analysis and planning</em> (pp. 43–76). Duke University Press.</li>
+        <li>Klüver, H. (2013). <em>Lobbying in the European Union: Interest groups, lobbying coalitions, and policy change</em>. Oxford University Press.</li>
+        <li>Klüver, H., Mahoney, C., &amp; Opper, M. (2015). Framing in context: How interest groups employ framing to lobby the European Commission. <em>Journal of European Public Policy</em>, 22(4), 481–498. <a href="https://doi.org/10.1080/13501763.2015.1008550" target="_blank" rel="noopener">doi.org/10.1080/13501763.2015.1008550</a></li>
+        <li>Kos, B., Tuković, L., Vlainić, E., &amp; Bagić Babac, M. (2026). Unveiling ideological extremes in parliamentary debates using transformer-based language models. <em>Journal of Information Technology &amp; Politics</em>. <a href="https://doi.org/10.1080/19331681.2026.2616668" target="_blank" rel="noopener">doi.org/10.1080/19331681.2026.2616668</a></li>
+        <li>Landis, J. R., &amp; Koch, G. G. (1977). The measurement of observer agreement for categorical data. <em>Biometrics</em>, 33(1), 159–174.</li>
+        <li>Leifeld, P., &amp; Haunss, S. (2012). Political discourse networks and the conflict over software patents in Europe. <em>European Journal of Political Research</em>, 51(3), 382–409.</li>
+        <li>Lemor, A., Pillod, A., Taylor, M., &amp; Nadeau, R. (2026). The Canadian Climate Framing (CCF) database: A sentence-level annotated corpus for the analysis of climate-change discourse in the Canadian press. <em>Scientific Data</em> (under review). Data: <a href="https://doi.org/10.5281/zenodo.20667151" target="_blank" rel="noopener">doi.org/10.5281/zenodo.20667151</a></li>
+        <li>Lin, G. (2025). <em>Three essays on methodological advancements of large language models in political science research</em>. Washington University in St. Louis, Arts &amp; Sciences Graduate Student Theses and Dissertations, no. 3564. <a href="https://doi.org/10.7936/pwe8-1545" target="_blank" rel="noopener">doi.org/10.7936/pwe8-1545</a></li>
+        <li>Öge, K., &amp; Quintin, M. (2026). Framing artificial intelligence: Public discourse on facial recognition in the European Union and the United States. <em>JCMS: Journal of Common Market Studies</em>. Advance online publication.</li>
+        <li>Proulx, É., Jacob, S., Beaulé, A., Dinan, S., &amp; Dufresne, Y. (2026). <em>Postures and framing of artificial intelligence in the European Parliament</em> [Preprint / unpublished manuscript]. Northeastern University; Université Laval.</li>
+        <li>Scheufele, D. A. (1999). Framing as a theory of media effects. <em>Journal of Communication</em>, 49(1), 103–122.</li>
+        <li>Schön, D. A., &amp; Rein, M. (1994). <em>Frame reflection: Toward the resolution of intractable policy controversies</em>. Basic Books.</li>
+        <li>Stone, D. A. (1989). Causal stories and the formation of policy agendas. <em>Political Science Quarterly</em>, 104(2), 281–300.</li>
+        <li>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E. H., Le, Q. V., &amp; Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. In S. Koyejo et al. (Eds.), <em>Advances in Neural Information Processing Systems 35</em> (pp. 24824–24837). Curran Associates.</li>
+      </ul>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <p>© <span data-year>2026</span> Marc Garnier · Université Laval</p>
-      <ul class="footer-links">
-        <li><a href="thesis.html">Doctoral thesis</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="mailto:garniermarc.pro@gmail.com">Email</a></li>
-      </ul>
-    </div>
+    <p>© <span data-year>2026</span> Marc Garnier · Université Laval</p>
+    <ul>
+      <li><a href="mailto:garniermarc.pro@gmail.com">Email</a></li>
+      <li><a href="https://github.com/marcgarnier" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
   </footer>
 
   <script src="js/main.js"></script>
