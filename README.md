@@ -12,3 +12,12 @@ Site statique (HTML / CSS / JS, aucune dépendance à installer), publié sur Gi
 - `js/main.js` — année du footer
 
 Pour ajouter une recherche : copier un bloc `<li class="entry">` dans `index.html`.
+
+## PDF du CV
+
+`assets/marc-garnier-cv.pdf` est généré depuis `cv.html` (styles `@media print` dans `css/style.css`).
+Après chaque modification du CV, le régénérer (PowerShell, depuis la racine du dépôt) :
+
+```powershell
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --no-pdf-header-footer --print-to-pdf="$PWD\assets\marc-garnier-cv.pdf" "file:///$PWD/cv.html"
+```

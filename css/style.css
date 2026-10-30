@@ -243,6 +243,19 @@ blockquote.question {
 .refs a { border-bottom: 1px solid var(--rule); overflow-wrap: anywhere; }
 .refs a:hover { border-bottom-color: var(--text); }
 
+/* outlined button (CV PDF download) */
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.button:hover { background: var(--text); color: var(--bg); }
+
 /* plain list of skills / tools */
 .plain {
   margin-top: 1.5rem;
@@ -283,4 +296,31 @@ blockquote.question {
   .entry .when { padding-top: 0; margin-bottom: 0.4rem; }
   .entry h3 { font-size: 1.2rem; }
   .site-footer { padding: 2rem 1rem 3rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Print (used to generate assets/marc-garnier-cv.pdf)
+   -------------------------------------------------------------------------- */
+
+.print-only { display: none; }
+
+@media print {
+  @page { size: letter; margin: 1.5cm 1.8cm; }
+
+  body { font-size: 10.5pt; line-height: 1.4; }
+  .site-header, .site-footer, .screen-only { display: none; }
+  .print-only { display: block; }
+
+  main { max-width: none; padding: 0; }
+  .page-head { padding-bottom: 1rem; }
+  .print-head h1 { font-size: 1.9rem; }
+  .print-head .meta { margin-top: 0.3rem; font-size: 0.9rem; color: var(--text-muted); }
+  .intro { margin-top: 0.8rem; font-size: 0.95rem; max-width: none; }
+
+  h2.section-label { margin-top: 1.4rem; break-after: avoid; }
+  .entries.compact .entry { padding: 0.55rem 0; break-inside: avoid; }
+  .entries.compact .entry h3 { font-size: 1rem; }
+  .entry .meta { margin-top: 0.1rem; }
+  .entry p.desc { margin-top: 0.2rem; }
+  .plain { margin-top: 0.6rem; }
 }
