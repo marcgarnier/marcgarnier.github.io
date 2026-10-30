@@ -15,9 +15,6 @@ Pour ajouter une recherche : copier un bloc `<li class="entry">` dans `index.htm
 
 ## PDF du CV
 
-`assets/marc-garnier-cv.pdf` est généré depuis `cv.html` (styles `@media print` dans `css/style.css`).
-Après chaque modification du CV, le régénérer (PowerShell, depuis la racine du dépôt) :
-
-```powershell
-& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --no-pdf-header-footer --print-to-pdf="$PWD\assets\marc-garnier-cv.pdf" "file:///$PWD/cv.html"
-```
+`assets/marc-garnier-cv.pdf` (bouton « Download PDF » de `cv.html`) est le CV LaTeX,
+copie de `Bureau\ID\CV_Marc_Garnier.pdf`. Il n'est pas généré depuis `cv.html` :
+après une mise à jour du CV LaTeX, recopier le PDF ici sous le même nom.
