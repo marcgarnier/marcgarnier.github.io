@@ -8,11 +8,11 @@
   --bg: #ffffff;
   --text: #212829;
   --text-muted: #5d6b6e;
-  --text-faint: #8a9597;
+  --text-faint: #6c787a;
   --text-body: #343d3f;
   --rule: #e6eaea;
 
-  --serif: "Times New Roman", Times, serif;
+  --serif: "Times New Roman", Times, "Liberation Serif", Tinos, "Nimbus Roman", serif;
 
   --page: 1040px;   /* header width */
   --column: 800px;  /* content width */
